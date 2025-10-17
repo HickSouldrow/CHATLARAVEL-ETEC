@@ -1,39 +1,127 @@
-# 💬 ChatLaravelPusher
-![alt text](image.png)
-<div align="center">
+# Nome do projeto
+PROJECT_NAME="chatLaravelPusher"
 
-**Sistema de chat em tempo real com Laravel + Pusher**
+echo "Criando o projeto Laravel..."
+composer create-project laravel/laravel $PROJECT_NAME
+cd $PROJECT_NAME || exit
 
-</div>
+echo "Instalando Laravel Breeze..."
+composer require laravel/breeze
+php artisan breeze:install
 
-## 🚀 Quick Start
+echo "Instalando Chatify..."
+composer require munafio/chatify
+php artisan chatify:install
 
-```bash
-# Clone & setup
-git clone https://github.com/seu-user/chatLaravelPusher.git
-cd chatLaravelPusher
-
-# Install backend
-composer install
-
-# Install frontend
+echo "Instalando dependências front-end..."
 npm install
 
-# Environment
+echo "Compilando assets com pnpm..."
+pnpm run dev
+
+echo "Rodando migrações..."
+php artisan migrate
+
+echo "Gerando README.md..."
+cat <<EOF > README.md
+# Chat Laravel com Pusher (Chatify)
+
+Este projeto é um sistema de chat em tempo real utilizando o framework **Laravel**, com a biblioteca **Chatify** para interface e lógica de mensagens. Usa **Laravel Breeze** para autenticação e **Pusher** para WebSockets em tempo real.
+
+## Tecnologias utilizadas
+
+- PHP 8+
+- Laravel
+- Laravel Breeze (autenticação)
+- Chatify
+- Composer
+- PNPM
+- MySQL
+- Vite
+- Pusher
+
+---
+
+## Comandos usados na criação
+
+\`\`\`bash
+composer create-project laravel/laravel chatLaravelPusher
+cd chatLaravelPusher
+composer require laravel/breeze
+php artisan breeze:install
+composer require munafio/chatify
+php artisan chatify:install
+npm i
+pnpm run dev
+php artisan serve
+php artisan migrate
+\`\`\`
+
+---
+
+## Como rodar localmente
+
+### Pré-requisitos
+
+- PHP >= 8.1
+- Composer
+- MySQL
+- Node.js + PNPM
+- Extensões PHP necessárias (OpenSSL, PDO, etc.)
+
+### Passos
+
+1. Clone o repositório:
+
+\`\`\`bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd chatLaravelPusher
+\`\`\`
+
+2. Instale as dependências:
+
+\`\`\`bash
+composer install
+npm install
+\`\`\`
+
+3. Copie o arquivo de ambiente e gere a chave:
+
+\`\`\`bash
 cp .env.example .env
 php artisan key:generate
+\`\`\`
 
-# Database
-touch database/database.sqlite
+4. Rode as migrações:
 
-# Migrate & install chat
+\`\`\`bash
 php artisan migrate
-php artisan chatify:install
-php artisan storage:link
+\`\`\`
 
-# Dev mode
+5. Compile os assets:
+
+\`\`\`bash
 npm run dev
+\`\`\`
+
+6. (EM OUTRO TERMINAL) Suba o servidor local:
+
+\`\`\`bash
 php artisan serve
+\`\`\`
+
+Acesse: [http://localhost:8000]
+
+---
+
+## Funcionalidades
+
+- Login e registro
+- Chat em tempo real
+- Interface pronta via Chatify
+- Notificações, histórico e mais
+
+---
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
