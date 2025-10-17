@@ -1,33 +1,27 @@
-# Nome do projeto
-PROJECT_NAME="chatLaravelPusher"
+# CHATLARAVEL-ETEC
 <img width="1363" height="643" alt="image" src="https://github.com/user-attachments/assets/1259bbc5-43cf-47f5-8193-a2234d5ca4ff" />
 <img width="1366" height="656" alt="image" src="https://github.com/user-attachments/assets/083f9933-f43a-48f4-8397-787c163acbce" />
 <img width="887" height="361" alt="image" src="https://github.com/user-attachments/assets/7e2fa5cf-92a7-43fe-8717-d4bfbe8444c0" />
 
 
 echo "Criando o projeto Laravel..."
-composer create-project laravel/laravel $PROJECT_NAME
-cd $PROJECT_NAME || exit
+composer create-project laravel/laravel CHATLARAVEL-ETEC
+cd CHATLARAVEL-ETEC
 
 echo "Instalando Laravel Breeze..."
-composer require laravel/breeze
-php artisan breeze:install
+--composer require laravel/breeze
+--php artisan breeze:install
 
-echo "Instalando Chatify..."
-composer require munafio/chatify
-php artisan chatify:install
+"Instalando Chatify..."
+--composer require munafio/chatify
+--php artisan chatify:install
 
 echo "Instalando dependências front-end..."
-npm install
+--npm install
 
-echo "Compilando assets com pnpm..."
-pnpm run dev
+"Rodando migrações..."
+--php artisan migrate
 
-echo "Rodando migrações..."
-php artisan migrate
-
-echo "Gerando README.md..."
-cat <<EOF > README.md
 # Chat Laravel com Pusher (Chatify)
 
 Este projeto é um sistema de chat em tempo real utilizando o framework **Laravel**, com a biblioteca **Chatify** para interface e lógica de mensagens. Usa **Laravel Breeze** para autenticação e **Pusher** para WebSockets em tempo real.
@@ -39,16 +33,16 @@ Este projeto é um sistema de chat em tempo real utilizando o framework **Larave
 - Laravel Breeze (autenticação)
 - Chatify
 - Composer
-- PNPM
 - MySQL
 - Vite
 - Pusher
+- Xampp (dependendo da forma que for desejado rodar)
 
 ---
 
 ## Comandos usados na criação
 
-\`\`\`bash
+\`\`\`
 composer create-project laravel/laravel chatLaravelPusher
 cd chatLaravelPusher
 composer require laravel/breeze
@@ -56,7 +50,7 @@ php artisan breeze:install
 composer require munafio/chatify
 php artisan chatify:install
 npm i
-pnpm run dev
+npm run dev
 php artisan serve
 php artisan migrate
 \`\`\`
@@ -78,7 +72,7 @@ php artisan migrate
 1. Clone o repositório:
 <img width="665" height="136" alt="image" src="https://github.com/user-attachments/assets/ddae307c-b02d-49d4-a9f8-c729e56bc41f" />
 
-\`\`\`bash
+\`\`\`
 git clone https://github.com/HickSouldrow/CHATLARAVEL-ETEC.git
 cd CHATLARAVEL-ETEC
 
@@ -89,14 +83,14 @@ cd CHATLARAVEL-ETEC
 <img width="399" height="226" alt="image" src="https://github.com/user-attachments/assets/5e828843-34ca-489c-8a4b-dead1557c867" />
 <img width="1095" height="530" alt="image" src="https://github.com/user-attachments/assets/526ee7b2-ba68-4857-9748-de404c025308" />
 
-\`\`\`bash
+\`\`\`
 composer install
 npm install
 \`\`\`
 
 3. Copie o arquivo de ambiente e gere a chave:
 
-\`\`\`bash
+\`\`\`
 cp .env.example .env
 php artisan key:generate
 \`\`\`
@@ -104,21 +98,21 @@ php artisan key:generate
 4. Rode as migrações:
 <img width="570" height="103" alt="image" src="https://github.com/user-attachments/assets/97f0b2f6-412e-4914-8026-c3ef199f313b" />
 
-\`\`\`bash
+\`\`\`
 php artisan migrate
 \`\`\`
 
 5. Compile os assets:
 <img width="519" height="456" alt="image" src="https://github.com/user-attachments/assets/2678e0d7-8609-4d54-8f7e-aa91d6007c99" />
 
-\`\`\`bash
+\`\`\`
 npm run dev
 \`\`\`
 
 6. (EM OUTRO TERMINAL) Suba o servidor local:
 <img width="525" height="230" alt="image" src="https://github.com/user-attachments/assets/5191b089-6fdf-426e-a730-546bfea922b4" />
 
-\`\`\`bash
+\`\`\`
 php artisan serve
 \`\`\`
 
